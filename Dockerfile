@@ -40,3 +40,12 @@ RUN ./get_helm.sh
 ARG TARGETARCH=amd64
 ARG AGENT_VERSION=2.194.0
 
+ENV TARGETARCH=linux-x64
+
+WORKDIR /azp
+
+COPY ./start.sh .
+RUN chmod +x start.sh
+
+ENTRYPOINT ["./start.sh"]
+
